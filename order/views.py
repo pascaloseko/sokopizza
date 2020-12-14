@@ -139,6 +139,7 @@ class OrderViewSet(viewsets.ModelViewSet):
             subtotal = order.total + vat
             order.subtotal += subtotal
             order.save()
-            return Response(status=status.HTTP_201_CREATED)
+            serializer = OrderSerializer(order)
+            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response(data={"Error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
