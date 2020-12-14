@@ -10,11 +10,17 @@ python3 -m venv env
 ```
 pip install -r requirements.txt
 ```
-4. Run Migrations
+4. Export db environment variables
+```
+export DB_NAME=db_name
+export DB_USER=db_user
+export DB_PASSWORD=db_password
+```
+5. Run Migrations
 ```
 ./manage.py makemigrations && ./manage.py migrate
 ```
-5. Run Server
+6. Run Server
 ```
 ./manage.py runserver
 ```
