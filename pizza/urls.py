@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.schemas import get_schema_view
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('order/', include('order.urls')),
     path('admin/', admin.site.urls),
+    path('openapi/', get_schema_view(
+        title="Pizza API",
+        description="Pizza API docs"
+    ), name='openapi-schema'),
+    path('docs/', TemplateView.as_view(
+        template_name='documentation.html',
+        extra_context={'schema_url': 'openapi-schema'}
+    ), name='swagger-ui'),
 ]
