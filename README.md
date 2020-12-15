@@ -54,7 +54,7 @@ http://127.0.0.1:8000/order/pizza_topping_type/
 Response 201
 {
   "id": 1,
-  "name": "Deluxe Toppings",
+  "name": "Basic Toppings",
   "price": "50.00",
   "size": 1
 }
@@ -63,14 +63,14 @@ Response 201
 http://127.0.0.1:8000/order/pizza_topping/
 ```
 {
-    "name": "Olives",
+    "name": "Cheese",
     "topping_type": 1
 }
 
 Response 201
 {
     "id": 1,
-    "name": "Olives",
+    "name": "Cheese",
     "topping_type": 1
 }
 ```
